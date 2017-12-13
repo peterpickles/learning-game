@@ -11,8 +11,7 @@ $(document).ready(function() {
 //allow img to be dragged from one place to another
 
 //allow imgs to return to the origin point if not dragged to the desired place
-
-//Once the  
+ 
 
 $('.draggable-spans span').draggable();
 
