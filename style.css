@@ -1,6 +1,23 @@
-#canvas {
+body {
+	text-align: center;
+}
+
+#canvas-container {
 	background: gray;
-	height: 560px;
-	width: 800px;
+	height: 350px;
+	width: 400px;
 	border: 3px solid black;
+	display: inline-block;
+
+}
+
+#canvas-container span {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background-color: blue;
+  border: 1px solid gray;
+}
+.draggable-spans span {
+  background-color: blue;
 }
