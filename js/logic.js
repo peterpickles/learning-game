@@ -1,9 +1,11 @@
-var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var words = ["cat", "hat", "xray"];	
+$(document).ready(function() {
+var letterArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var wordsArr = ["cat", "hat", "xray"];	
 var randomWord = [];
 
-//allow the divs to be injected with imgs
+//
 
+//allow the divs to be injected with imgs
 
 //allow imgs to be dragged around
 
@@ -30,3 +32,5 @@ var randomWord = [];
 
 $('.draggable-spans span').draggable();
 	cursor: 'move';
+
+});
