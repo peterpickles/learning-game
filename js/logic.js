@@ -1,9 +1,23 @@
-$(document).ready(function() {
+console.log ("hooked up!");
+
 var letterArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var wordsArr = ["cat", "hat", "xray"];	
+var wordsArr = ["cat", "hat", "dog", "fog",];	
 var randomWord = [];
 
-//
+//make elements draggable
+$( function() {
+    $( ".draggable-spans span" ).draggable();
+} )
+
+// grab a word,, splice put it into an array
+function stringToArray () {
+	wordsArr[0].split("");
+	console.log ("on");
+}
+// every time I drag letter, push() into an array
+// make a function to compare two arrays, if they match, then you win that instance
+// function >> letter I dragged, if that's not in the answer array, pop it out.
+// compare arrays --- might be using includes
 
 //allow the divs to be injected with imgs
 
@@ -30,7 +44,3 @@ var randomWord = [];
 
 // make a jquery logic for button showing after the word has been matched
 
-$('.draggable-spans span').draggable();
-	cursor: 'move';
-
-});
