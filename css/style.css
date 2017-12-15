@@ -1,14 +1,15 @@
 body {
 	text-align: center;
+  font-family: "arial", san-serif;
 }
 
-.gamne-container {
+.game-container {
 
 }
 
 #letters {	
 	background: gray;
-	height: 350px;
+	height: 300px;
 	width: 400px;
 	border: 3px solid black;
 }
@@ -25,28 +26,27 @@ body {
 }
 
 #wordBox div {
-  display: inline-block;
   height: 50px;
   width: 50px;
   border: 1px solid gray;
   background-color: white;
-  overflow: auto;
-  margin-left: 20px;
+  overflow: auto; 
 }
+
 #wordBox {
 	background: gray;
 	height: 350px;
 	width: 400px;
 	border: 3px solid black;
 }
-#letters span {
+/*#letters span {
   display: inline-block;
   height: 50px;
   width: 50px;
   border: 1px solid gray;
   background-color: white;
   overflow: auto;
-}
+}*/
 #wordBox span {
   height: 50px;
   width: 50px;

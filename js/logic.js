@@ -4,8 +4,11 @@ var words = new Array;
 words[0] = "CAT"
 words[1] = "HAT"
 words[2] = "BOY"
+words[3] = "TOY"
+var AnswerArray= [];
 
 startGame();
+
 function startGame(){
 	var divAvailable = document.getElementById("letters");
 	
@@ -22,10 +25,22 @@ $( function() {
 } )
 
 // grab a word,, splice put it into an array
-function stringsToArray () {
-	wordsArr[0].split("")
-	console.log ("on")
+function stringToSplit(str) {
+
+	word = str.split ('');
+	AnswerArray.push(word);
+	console.log(AnswerArray);
 }
+stringToSplit(words[0]);
+ 
+//attach it to an event
+//Looping through the words
+//
+//another function that has a for loop, run the stringSplit function in there
+//compare the content inside of the brackets
+//clear word to empty brackets
+//next word function
+
 // every time I drag letter, push() into an array
 // make a function to compare two arrays, if they match, then you win that instance
 // function >> letter I dragged, if that's not in the answer array, pop it out.
