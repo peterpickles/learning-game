@@ -1,6 +1,9 @@
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var words = ["cat", "hat", "xray"];	
-var randomWord = [];
+var words = new Array[];
+word[0] = "cat"
+word[1] = "hat"
+word[2] = "boy"
+
 
 //allow the divs to be injected with imgs
 

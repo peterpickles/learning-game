@@ -1,27 +1,35 @@
-console.log ("hooked up!");
+console.log ("linked");
+var letterArr = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var words = new Array;
+words[0] = "CAT"
+words[1] = "HAT"
+words[2] = "BOY"
 
-var letterArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var wordsArr = ["cat", "hat", "dog", "fog",];	
-var randomWord = [];
-
+startGame();
+function startGame(){
+	var divAvailable = document.getElementById("letters");
+	
+	for(var i=0; i < letterArr.length; i++) {
+		var l = document.createElement('div');
+		l.innerHTML = letterArr[i];
+		l.className = "btnLetter";
+		divAvailable.appendChild(l);
+	}
+}
 //make elements draggable
 $( function() {
-    $( ".draggable-spans span" ).draggable();
+    $(".btnLetter").draggable();
 } )
 
 // grab a word,, splice put it into an array
-function stringToArray () {
-	wordsArr[0].split("");
-	console.log ("on");
+function stringsToArray () {
+	wordsArr[0].split("")
+	console.log ("on")
 }
 // every time I drag letter, push() into an array
 // make a function to compare two arrays, if they match, then you win that instance
 // function >> letter I dragged, if that's not in the answer array, pop it out.
 // compare arrays --- might be using includes
-
-//allow the divs to be injected with imgs
-
-//allow imgs to be dragged around
 
 //allow img to be dragged from one place to another
 
