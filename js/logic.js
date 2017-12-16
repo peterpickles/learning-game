@@ -10,7 +10,7 @@ var AnswerArray= [];
 startGame();
 
 function startGame(){
-	var divAvailable = document.getElementById("letters");
+	divAvailable = document.getElementById("letters");
 	
 	for(var i=0; i < letterArr.length; i++) {
 		var l = document.createElement('div');
