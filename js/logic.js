@@ -9,19 +9,21 @@ var AnswerArray= [];
 
 startGame();
 
+//start game, grab a letter from the letterArr and put them inside each div
 function startGame(){
 	var divAvailable = document.getElementById("letters");
 	
 	for(var i=0; i < letterArr.length; i++) {
 		var l = document.createElement('div');
 		l.innerHTML = letterArr[i];
-		l.className = "btnLetter";
+		l.className = "letterTiles";
 		divAvailable.appendChild(l);
 	}
 }
+
 //make elements draggable
 $( function() {
-    $(".btnLetter").draggable();
+    $(".letterTiles").draggable();
 } )
 
 // grab a word,, splice put it into an array

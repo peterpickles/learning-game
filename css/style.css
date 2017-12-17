@@ -14,7 +14,7 @@ body {
 	border: 3px solid black;
 }
 
-.btnLetter{
+.letterTiles {
   display: inline-block;
   background-color: pink;
   font-size: 18px;
