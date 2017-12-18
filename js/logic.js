@@ -1,4 +1,3 @@
-
 var correctCards = 0;
 $( init );
 
@@ -19,10 +18,14 @@ function init() {
   $('#cardSlots').html( '' );
 
   // Create the pile of shuffled cards
+
   var numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 ];
   var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ];
   // <!--letters.sort( function() { return Math.random() - .5 } );--> didn't work :(
 
+  //Made a for loop to go through the letters array
+  //made a div with the letter based on it's index in the array
+  // 
   for ( var i=0; i<26; i++ ) {
     $('<div>' + letters[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
       
@@ -62,13 +65,13 @@ function cardDrop( event, ui ) {
   
 // if 10 cards are placed correctly and accepted, populate successmessage
 
-  if ( correctCards == 10 ) {
+  if ( correctCards == 5 ) {
     $('#successMessage').show();
     $('#successMessage').animate( {
       left: '380px',
       top: '200px',
       width: '400px',
-      height: '500px',
+      height: '250px',
       opacity: 1
     } );
   }

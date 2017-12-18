@@ -1,14 +1,12 @@
 body {
   margin: 30px;
-  font-family: "Georgia", serif;
+  font-family: "arial", serif;
   line-height: 1.8em;
-  background-image: url(https://goo.gl/images/tSo7BG);
+  background-image: url("https://goo.gl/images/tSo7BG");
 }
  
-/* Give headings their own font */
- 
-h1, h2, {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+ h1, h2, {
+  font-family: "Lucida Grande", sans-serif;
 }
  
 /* Where the game is*/
@@ -16,8 +14,8 @@ h1, h2, {
 #content {
   margin: 80px 70px;
   text-align: center;
-  /*-moz-user-select: none;
-  -webkit-user-select: none;*/
+  -moz-user-select: none;
+  -webkit-user-select: none;
   user-select: none;
 }
  
@@ -46,8 +44,6 @@ h1, h2, {
   background: navy;
   float: right;
 }
- 
-/* The initial pile of unsorted cards */
  
 #cardPile {
   margin: 0 auto;
