@@ -33,15 +33,22 @@ function stringToSplit(str) {
 	AnswerArray.push(word);
 	console.log(AnswerArray);
 }
-stringToSplit(words[0]);
- 
-//attach it to an event
-//Looping through the words
-//
+// stringToSplit(words[0]);
+
+
+//clear word to empty brackets
+function clearWord () {
+	
+}
+
+// //next word function
+// function nextWord {
+// 	console.log("Next word!")
+// } 
 //another function that has a for loop, run the stringSplit function in there
 //compare the content inside of the brackets
-//clear word to empty brackets
-//next word function
+
+
 
 // every time I drag letter, push() into an array
 // make a function to compare two arrays, if they match, then you win that instance
