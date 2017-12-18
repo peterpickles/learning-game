@@ -1,7 +1,9 @@
 body {
+  margin: 30px;
 	text-align: center;
-  font-family: "arial", san-serif;
-  background-color: black;
+  font-family: "arial", serif;
+  line-height: 1.8em;
+  color: #333
 }
 
 .game-container {

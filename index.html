@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Alphabets learning game</title>	
+	<title>Learning letters with Lauren</title>	
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="css/
 	style.css">
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -28,8 +29,20 @@
 	</div>
 </div>
 
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<div id="content">
+
+  <div id="cardPile"> </div>
+  <div id="cardSlots"> </div>
+
+  <div id="successMessage">
+    <h2>Congratulations!</h2>
+    <button onclick="init()">Play Again</button>
+  </div>
+
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
 <script src="js/logic.js"></script>
 </body>
 </html>
