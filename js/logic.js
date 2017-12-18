@@ -1,4 +1,3 @@
-console.log ("linked");
 var letterArr = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var words = new Array;
 words[0] = "CAT"
@@ -31,14 +30,14 @@ function stringToSplit(str) {
 
 	word = str.split ('');
 	AnswerArray.push(word);
-	console.log(AnswerArray);
+	
 }
-// stringToSplit(words[0]);
-
+stringToSplit(words[0]);
+console.log(AnswerArray);
 
 //clear word to empty brackets
 function clearWord () {
-				
+
 }
 
 // //next word function
