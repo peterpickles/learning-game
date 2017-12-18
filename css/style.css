@@ -64,6 +64,19 @@ input {
   top: 20px;
 }
 
+/*Colored cards*/
+#card1.correct { background: red; }
+#card2.correct { background: brown; }
+#card3.correct { background: orange; }
+#card4.correct { background: yellow; }
+#card5.correct { background: green; }
+#card6.correct { background: cyan; }
+#card7.correct { background: blue; }
+#card8.correct { background: indigo; }
+#card9.correct { background: purple; }
+#card10.correct { background: violet; }
+
+/*Winning Message!*/ 
 #successMessage {
   position: absolute;
   left: 580px;
