@@ -13,7 +13,7 @@ function init() {
     height: 0
   } );
 
-  // Reset the game
+  // Reset the game, sets the cards back to its position
   correctCards = 0;
   $('#cardPile').html( '' );
   $('#cardSlots').html( '' );
@@ -21,7 +21,7 @@ function init() {
   // Create the pile of shuffled cards
   var numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 ];
   var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ];
-  // <!--letters.sort( function() { return Math.random() - .5 } );-->
+  // <!--letters.sort( function() { return Math.random() - .5 } );--> didn't work :(
 
   for ( var i=0; i<26; i++ ) {
     $('<div>' + letters[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
@@ -32,7 +32,7 @@ function init() {
     } );
   }
 
-  // Create the card slots
+  // creating the word cards
   var words = [ 'Apple', 'Boy', 'Cat', 'Dog', 'Elepant', 'Fort', 'Go', 'Hat', 'It', 'Jet', 'Key', 'Let', 'Monkey', 'Nancy', 'Ocean', 'Pet', 'Queen', 'Rat', 'Sam', 'Tea', 'Unicorn', 'Vee', 'Water', 'X-ray', 'Yosemite' , 'Zebra' ];
   for ( var i=1; i<=26; i++ ) {
     $('<div>' + words[i-1] + '</div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
@@ -45,26 +45,22 @@ function init() {
 }
 
 // If the card was dropped to the correct slot,
-  // change the card colour, position it directly
-  // on top of the slot, and prevent it being dragged
-  // again
+ 
 function cardDrop( event, ui ) {
   var slotNumber = $(this).data( 'number' );
   var cardNumber = ui.draggable.data( 'number' );
 
-  
-
   if ( slotNumber == cardNumber ) {
     ui.draggable.addClass( 'correct' );
     ui.draggable.draggable( 'disable' );
+//once the card is confirmed position it directly on top of the slot, and prevent it being dragged
     $(this).droppable( 'disable' );
     ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
     ui.draggable.draggable( 'option', 'revert', false );
     correctCards++;
   } 
   
-  // If all the cards have been placed correctly then display a message
-  // and reset the cards for another go
+// if 10 cards are placed correctly and accepted, populate successmessage
 
   if ( correctCards == 10 ) {
     $('#successMessage').show();

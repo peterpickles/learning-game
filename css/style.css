@@ -1,10 +1,8 @@
-Add some margin to the page and set a default font and colour
- 
 body {
   margin: 30px;
   font-family: "Georgia", serif;
   line-height: 1.8em;
-  color: #333;
+  background-image: url(https://goo.gl/images/tSo7BG);
 }
  
 /* Give headings their own font */
@@ -13,13 +11,13 @@ h1, h2, {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
  
-/* Main content area */
+/* Where the game is*/
  
 #content {
   margin: 80px 70px;
   text-align: center;
-  -moz-user-select: none;
-  -webkit-user-select: none;
+  /*-moz-user-select: none;
+  -webkit-user-select: none;*/
   user-select: none;
 }
  
@@ -53,7 +51,7 @@ h1, h2, {
  
 #cardPile {
   margin: 0 auto;
-  background: green;
+  background: teal;
   float: left;
 }
  
@@ -65,8 +63,6 @@ h1, h2, {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
-  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
   box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
 }
  
@@ -77,20 +73,16 @@ h1, h2, {
   width: 43%;
   height: 18%;
   padding: .85em;
-  padding-top: 40px;
+  padding-top: 20px;
   padding-bottom: 0;
   border: 2px solid #333;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
   margin: 10px 0 0 10px;
-  background: #fff;
+  background: orange;
 }
- 
-/*#cardSlots div:first-child, #cardPile div:first-child {
-  margin-left: 0;
-}*/
- 
+  
 #cardSlots div.hovered {
   background: #aaa;
 }
@@ -130,6 +122,7 @@ h1, h2, {
 #card13.correct { background: indigo; }
 #card14.correct { background: purple; }
 #card15.correct { background: violet; }  
+
 /* "You did it!" message */
 #successMessage {
   position: absolute;
