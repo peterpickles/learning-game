@@ -40,6 +40,26 @@ function clearWord () {
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // //next word function
 // function nextWord {
 // 	console.log("Next word!")
