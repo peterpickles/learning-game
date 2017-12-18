@@ -1,10 +1,11 @@
 body {
 	text-align: center;
   font-family: "arial", san-serif;
+  background-image: url 
 }
 
 .game-container {
-
+  display: inline-block; 
 }
 
 #letters {	
@@ -25,6 +26,13 @@ body {
   border: 1px solid black;
 }
 
+#wordBox {
+  background: gray;
+  height: 350px;
+  width: 400px;
+  border: 3px solid black;
+}
+
 #wordBox div {
   height: 50px;
   width: 50px;
@@ -34,24 +42,9 @@ body {
   display: inline-block;
 }
 
-#wordBox {
-	background: gray;
-	height: 350px;
-	width: 400px;
-	border: 3px solid black;
-}
-/*#letters span {
-  display: inline-block;
+#wordBox div {
   height: 50px;
   width: 50px;
   border: 1px solid gray;
-  background-color: white;
-  overflow: auto;
-}*/
-#wordBox span {
-  height: 50px;
-  width: 50px;
-  border: 1px solid gray;
-}
-.draggable-spans span {
+  background-color: green;
 }
