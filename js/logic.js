@@ -38,7 +38,7 @@ function stringToSplit(str) {
 
 //clear word to empty brackets
 function clearWord () {
-	
+				
 }
 
 // //next word function

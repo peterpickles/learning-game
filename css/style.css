@@ -48,3 +48,7 @@ body {
   border: 1px solid gray;
   background-color: green;
 }
+
+input {
+  top: 20px;
+}
