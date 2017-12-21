@@ -4,9 +4,9 @@ I set out originally to make a children's drag and drop learning game to teach m
 
 ## Instructions
 * Drag each letter to the corresponding words
-* Once the 
-*
-*
+* Once the card has been drop, you should see a confirmation by seeing the card snap into place
+* Once all 25 words have been filled, the game will stop and congratulate you!
+
 
 ##Technical Requirements
 * Display a game in the browser
