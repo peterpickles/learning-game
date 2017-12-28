@@ -19,7 +19,6 @@ function init() {
 
   //Made a for loop to go through the letters array
   //made a div with the letter based on it's index in the array
-  // 
   for ( var i=0; i<26; i++ ) {
     $('<div>' + letters[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
       

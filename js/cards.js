@@ -5,32 +5,56 @@ var words = [ 'Apple', 'Boy', 'Cat', 'Dog', 'Elepant', 'Fort', 'Go', 'Hat', 'It'
 
 var cards = [
 { 
-	letters: "A"
+	letters: "A",
 	words: "Apple"
-}
-
+},	
 { 
-	letters: "B"
+	letters: "B",
 	words: "Boy"
-}
-
+},
 { 
-	letters: "C"
-	words: "Cat"
-}
-
+	letters: "C",
+	words: "Apple"
+},
 { 
-	letters: "D"
-	words: "Dog"
-}
-
+	letters: "",
+	words: "Apple"
+},
 { 
-	letters: "E"
-	words: "Elepant"
-}
+	letters: "",
+	words: "Apple"
+},
 { 
-	letters: "F"
-	words: "Fort"
+	letters: "",
+	words: "Apple"
+},
+{ 
+	letters: "",
+	words: "Apple"
+},
+{ 
+	letters: "",
+	words: "Apple"
+},
+{ 
+	letters: "",
+	words: "Apple"
+},
+{ 
+	letters: "",
+	words: "Apple"
+},
+{ 
+	letters: "",
+	words: "Apple"
+},
+{ 
+	letters: "",
+	words: "Apple"
+},
+{ 
+	letters: "",
+	words: "Apple"
 }
 
 ];
