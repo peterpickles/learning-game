@@ -5,7 +5,6 @@ var num = Math.floor(Math.random()*25)
 var randomLetter= letters[num];
 var correctWord = words[num];
 var randomWord = words[Math.floor(Math.random()*25)];
-// var numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 ];
 
 
 // var cards = [
@@ -19,23 +18,23 @@ var randomWord = words[Math.floor(Math.random()*25)];
 // },
 // { 
 // 	letters: "C",
-// 	words: "Apple"
+// 	words: "Cat"
 // },
 // { 
 // 	letters: "D",
-// 	words: "word"
+// 	words: "Dog"
 // },
 // { 
-// 	letters: "",
-// 	words: "Apple"
+// 	letters: "E",
+// 	words: "Elepant"
 // },
 // { 
-// 	letters: "",
-// 	words: "Apple"
+// 	letters: "F",
+// 	words: "Fort"
 // },
 // { 
-// 	letters: "",
-// 	words: "Apple"
+// 	letters: "G",
+// 	words: ""
 // },
 // { 
 // 	letters: "",
