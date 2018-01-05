@@ -1,6 +1,6 @@
 var correctCards = 0;
 var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ];
-var words = [ 'Apple', 'Boy', 'Cat', 'Dog', 'Elepant', 'Fort', 'Go', 'Hat', 'It', 'Jet', 'Key', 'Let', 'Monkey', 'Nancy', 'Ocean', 'Pet', 'Queen', 'Rat', 'Sam', 'Tea', 'Unicorn', 'Vee', 'Water', 'X-ray', 'Yosemite' , 'Zebra' ];
+var words = [ 'Apple', 'Boy', 'Cat', 'Dog', 'Elepant', 'Fort', 'Go', 'Hat', 'It', 'Jet', 'Key', 'Lenny', 'Monkey', 'Nancy', 'Ocean', 'Pet', 'Queen', 'Rat', 'Sam', 'Tea', 'Unicorn', 'Victor', 'Water', 'X-ray', 'Yosemite' , 'Zebra' ];
 var num = Math.floor(Math.random()*25)
 var randomLetter= letters[num];
 var correctWord = words[num];
@@ -16,7 +16,6 @@ $( document ).ready(function() {
       width: 0,
       height: 0
     } );
-  
 });
 //Made a for loop to go through the letters array
 //made a div with the letter based on it's index in the array
@@ -65,6 +64,13 @@ function cardDrop( event, ui ) {
     correctCards++;
   } 
 
+  
+
+}
+
+// if 10 cards are placed correctly and accepted, populate successmessag
+
+function checkForWin () {
   if ( correctCards == 5 ) {
     $('#successMessage').show();
     $('#successMessage').animate( {
@@ -74,8 +80,11 @@ function cardDrop( event, ui ) {
       height: '250px',
       opacity: 1
     } );
-  }
+  } else {
+    //clear the cards
+    //load the next set of cards with show letter and cards
 
+
+  }
 }
-// if 10 cards are placed correctly and accepted, populate successmessag
 

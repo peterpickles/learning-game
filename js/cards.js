@@ -25,51 +25,84 @@ var cards = [
 },
 { 
 	letters: "G",
-	words: ""
+	words: "George"
 },
 { 
-	letters: "",
-	words: "Apple"
+	letters: "H",
+	words: "Hat"
 },
 { 
-	letters: "",
-	words: "Apple"
+	letters: "I",
+	words: "It"
 },
 { 
-	letters: "",
-	words: "Apple"
+	letters: "J",
+	words: "Jet"
 },
 { 
-	letters: "",
-	words: "Apple"
+	letters: "K",
+	words: "Key"
 },
 { 
-	letters: "",
-	words: "Apple"
+	letters: "L",
+	words: "Lenny"
 },
 { 
-	letters: "",
-	words: ""
+	letters: "M",
+	words: "Monkey"
 },
 { 
-	letters: "",
-	words: ""
+	letters: "N",
+	words: "Nancy"
 },
 { 
-	letters: "",
-	words: ""
+	letters: "O",
+	words: "Ocean"
 },
 { 
-	letters: "",
-	words: ""
+	letters: "P",
+	words: "Pet"
 },
 { 
-	letters: "",
-	words: ""
+	letters: "Q",
+	words: "Queen"
 },
 { 
-	letters: "",
-	words: ""
+	letters: "R",
+	words: "Rat"
+},
+{ 
+	letters: "S",
+	words: "Sam"
+},
+{ 
+	letters: "T",
+	words: "Tea"
+},
+{ 
+	letters: "U",
+	words: "Unicorn"
+},
+{ 
+	letters: "V",
+	words: "Victor"
+},
+{ 
+	letters: "W",
+	words: "Water"
+},
+{ 
+	letters: "X",
+	words: "Xray"
+}
+,
+{ 
+	letters: "Y",
+	words: "Yoyo"
+},
+{ 
+	letters: "Z",
+	words: "Zebra"
 }
 
 ];
