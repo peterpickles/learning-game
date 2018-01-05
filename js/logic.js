@@ -1,34 +1,33 @@
-$( init );
-$( showLetters);
-$( showWords);
+var correctCards = 0;
+var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ];
+var words = [ 'Apple', 'Boy', 'Cat', 'Dog', 'Elepant', 'Fort', 'Go', 'Hat', 'It', 'Jet', 'Key', 'Let', 'Monkey', 'Nancy', 'Ocean', 'Pet', 'Queen', 'Rat', 'Sam', 'Tea', 'Unicorn', 'Vee', 'Water', 'X-ray', 'Yosemite' , 'Zebra' ];
+var num = Math.floor(Math.random()*25)
+var randomLetter= letters[num];
+var correctWord = words[num];
+var randomWord = words[Math.floor(Math.random()*words.length)];
 
-function init() {
-   //hide the success message modal
-   $('#successMessage').hide();
-   $('#successMessage').css( {
+$( document ).ready(function() {
+  $(showLetters);
+  $(showWords);
+  $('#successMessage').hide();
+  $('#successMessage').css( {
       left: '580px',
       top: '250px',
       width: 0,
       height: 0
     } );
-
-    correctCards = 0;
-    // Reset the game, sets the cards back to its position
-    // $('#cardPile').html( '' );
-    // $('#cardSlots').html( '' );
-}
-
-
+  
+});
 //Made a for loop to go through the letters array
 //made a div with the letter based on it's index in the array
 function showLetters() {
-for ( var i=0; i<1; i++ ) {
+// for ( var i=0; i<1; i++ ) {
     $('<div>' + randomLetter + '</div>').appendTo( '#cardPile' ).draggable( {
       stack: '#cardPile div',
       cursor: 'move',
       revert: true
     } );
-  }
+  // }
 }
 // creating the word cards
 function showWords() {
@@ -51,9 +50,6 @@ function showWords() {
       });
 
 }
-
-function cardDrop() {
-
 }
 function cardDrop( event, ui ) {
   var slotNumber = $(this).data( 'number' );
@@ -71,6 +67,10 @@ function cardDrop( event, ui ) {
   
 // if 10 cards are placed correctly and accepted, populate successmessage
 
+
+
+}
+function checkWin {
   if ( correctCards == 5 ) {
     $('#successMessage').show();
     $('#successMessage').animate( {
@@ -81,5 +81,4 @@ function cardDrop( event, ui ) {
       opacity: 1
     } );
   }
-
 }
