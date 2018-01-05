@@ -50,7 +50,7 @@ function showWords() {
       });
 
 }
-}
+
 function cardDrop( event, ui ) {
   var slotNumber = $(this).data( 'number' );
   var cardNumber = ui.draggable.data( 'number' );
@@ -64,13 +64,7 @@ function cardDrop( event, ui ) {
     ui.draggable.draggable( 'option', 'revert', false );
     correctCards++;
   } 
-  
-// if 10 cards are placed correctly and accepted, populate successmessage
 
-
-
-}
-function checkWin {
   if ( correctCards == 5 ) {
     $('#successMessage').show();
     $('#successMessage').animate( {
@@ -81,4 +75,7 @@ function checkWin {
       opacity: 1
     } );
   }
+
 }
+// if 10 cards are placed correctly and accepted, populate successmessag
+
