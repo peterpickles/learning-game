@@ -2,22 +2,40 @@ body {
   margin: 30px;
   font-family: "arial", serif;
   line-height: 1.8em;
-  background-image: url("https://goo.gl/images/tSo7BG");
+  background: url("../img/background.jpg") repeat;
+  background-size: cover;
 }
  
  h1, h2, {
   font-family: "Lucida Grande", sans-serif;
 }
- 
 /* Where the game is*/
- 
-#content {
+
+#successMessage {
+  position: absolute;
+  left: 580px;
+  top: 500px;
+  width: 0;
+  height: 0;
+  z-index: 100;
+  background: #dfd;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  padding: 20px;
+}
+
+/*#content {
   margin: 80px 70px;
   text-align: center;
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
-}
+}*/
  
 /* Header/footer boxes */
  
@@ -46,7 +64,7 @@ body {
 }
  
 #cardPile {
-  margin: 0 auto;
+  margin: auto;
   background: teal;
   float: left;
 }
@@ -88,11 +106,12 @@ body {
 }
  
 #cardPile div {
-  background: #666;
+  background: #665;
   color: #fff;
   font-size: 1em;
   text-shadow: 0 0 3px #000;
   text-align: center;
+  margin: 0 100px auto;
 }
  
 #cardPile div.ui-draggable-dragging {
@@ -106,20 +125,3 @@ body {
 #card1.correct { background: red; }
 #card2.correct { background: brown; }
 /* "You did it!" message */
-#successMessage {
-  position: absolute;
-  left: 580px;
-  top: 500px;
-  width: 0;
-  height: 0;
-  z-index: 100;
-  background: #dfd;
-  border: 2px solid #333;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-  -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-  box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-  padding: 20px;
-}

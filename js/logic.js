@@ -85,8 +85,6 @@ function checkForWin () {
       opacity: 1
     } );
   }else {
-    $(".ui-droppable").remove();
-    $(".ui-draggable").remove();
     resetCards()
   }
 }
