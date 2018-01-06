@@ -61,6 +61,7 @@ function cardDrop( event, ui ) {
     ui.draggable.addClass( 'correct' );
     ui.draggable.draggable( 'disable' );
 //once the card is confirmed position it directly on top of the slot, and prevent it being dragged
+    correctCards++;
     $(this).droppable( 'disable' );
     ui.draggable.position({ 
       of: $(this), 
@@ -68,10 +69,12 @@ function cardDrop( event, ui ) {
       at: 'left top' 
     });
     ui.draggable.draggable( 'option', 'revert', false );
-    correctCards++;
-    console.log(correctCards);
+    checkForWin();
+    // console.log(correctCards);
   } 
-// function checkForWin () {
+}
+
+function checkForWin () {
   if ( correctCards == 5 ) {
     $('#successMessage').show();
     $('#successMessage').animate( {
@@ -81,18 +84,22 @@ function cardDrop( event, ui ) {
       height: '250px',
       opacity: 1
     } );
-  // } else {
-    //clear the cards
-    //load the next set of cards with show letter and cards
-
-
+  }else {
+    $(".ui-droppable").remove();
+    $(".ui-draggable").remove();
+    resetCards()
   }
-// }
-  
-
 }
 
-// if 10 cards are placed correctly and accepted, populate successmessag
+function resetCards () {
+  $(".ui-droppable").remove();
+  $(".ui-draggable").remove();
+  $(showLetters);
+  $(showWords);
+}
+
+
+
 
 
 
