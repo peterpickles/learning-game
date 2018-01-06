@@ -23,7 +23,7 @@ function showLetters() {
 // for ( var i=0; i<1; i++ ) {
     $('<div>' + randomLetter + '</div>').appendTo( '#cardPile' ).draggable( {
       stack: '#cardPile div',
-      cursor: 'move',
+      cursor: 'pointer',
       revert: true
     } );
     console.log("index of letter is ", letters.indexOf(randomLetter));
@@ -36,7 +36,7 @@ function showWords() {
           hoverClass: 'hovered',
           drop: cardDrop
       });
-      $('<div>' + words[num] + '</div>').appendTo("#cardSlots").droppable({
+      $('<div>' + correctWord + '</div>').appendTo("#cardSlots").droppable({
           accept: '#cardSlots div',
           hoverClass: 'hovered',
           drop: cardDrop
@@ -49,8 +49,8 @@ function showWords() {
 function cardDrop( event, ui ) {
   // var cardNumber = ui.draggable.data( 'number' );
   // var slotNumber = $(this).data( 'number' );
-  var cardNumber = letters.indexOf(randomLetter);
-  var slotNumber = words.indexOf(correctword);
+  var cardNumber = $(this).data( 'number' );
+  var slotNumber = ui.draggable.data( 'number' );
 
   if ( slotNumber === cardNumber ) {
     ui.draggable.addClass( 'correct' );
