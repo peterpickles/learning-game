@@ -6,7 +6,7 @@ var randomLetter= letters[num];
 var correctWord = words[num];
 var randomWord = words[Math.floor(Math.random()*words.length)];
 
-$( document ).ready(function() {
+$( document ).ready(function init() {
   $(showLetters);
   $(showWords);
   $('#successMessage').hide();
@@ -22,25 +22,29 @@ $( document ).ready(function() {
 function showLetters() {
 // for ( var i=0; i<1; i++ ) {
     $('<div>' + randomLetter + '</div>').appendTo( '#cardPile' ).draggable( {
+      // containment: '#content',
       stack: '#cardPile div',
       cursor: 'pointer',
-      revert: true
+      revert: true,
     } );
     console.log("index of letter is ", letters.indexOf(randomLetter));
   // }
 }
 // creating the word cards
 function showWords() {  
+       $('<div>' + correctWord + '</div>').appendTo("#cardSlots").droppable({
+          accept: '#cardPile div',
+          hoverClass: 'hovered',
+          drop: cardDrop
+      });
+
       $('<div>' + randomWord + '</div>').appendTo("#cardSlots").droppable({
-          accept: '#cardSlots div',
+          accept: '#cardPile div',
           hoverClass: 'hovered',
           drop: cardDrop
-      });
-      $('<div>' + correctWord + '</div>').appendTo("#cardSlots").droppable({
-          accept: '#cardSlots div',
-          hoverClass: 'hovered',
-          drop: cardDrop
-      });
+      })
+
+     
       console.log("index of wrong word is ", words.indexOf(randomWord));
       console.log("index of correct word is ", words.indexOf(correctWord));
 }
@@ -53,6 +57,7 @@ function cardDrop( event, ui ) {
   var slotNumber = ui.draggable.data( 'number' );
 
   if ( slotNumber === cardNumber ) {
+    console.log("found the correct one");
     ui.draggable.addClass( 'correct' );
     ui.draggable.draggable( 'disable' );
 //once the card is confirmed position it directly on top of the slot, and prevent it being dragged
