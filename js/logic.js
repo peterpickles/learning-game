@@ -88,6 +88,9 @@ function checkForWin () {
   }
 }
 
+//reset card after the card drop happens
+//Will need a slight pause in the removal and some animations when the card comes into view
+//Get 
 function resetCards () {
   $(".ui-droppable").remove();
   $(".ui-draggable").remove();
