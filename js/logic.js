@@ -22,7 +22,6 @@ $( document ).ready(function init() {
 function showLetters() {
 // for ( var i=0; i<1; i++ ) {
     $('<div>' + randomLetter + '</div>').appendTo( '#cardPile' ).draggable( {
-      // containment: '#content',
       stack: '#cardPile div',
       cursor: 'pointer',
       revert: true,
@@ -41,7 +40,9 @@ function showWords() {
       $('<div>' + randomWord + '</div>').appendTo("#cardSlots").droppable({
           accept: '#cardPile div',
           hoverClass: 'hovered',
-          drop: cardDrop
+          drop: function() {
+            console.log("Wrong try again!");
+          }
       })
 
      
@@ -51,12 +52,10 @@ function showWords() {
  
 
 function cardDrop( event, ui ) {
-  // var cardNumber = ui.draggable.data( 'number' );
-  // var slotNumber = $(this).data( 'number' );
-  var cardNumber = $(this).data( 'number' );
-  var slotNumber = ui.draggable.data( 'number' );
+  var letter = randomLetter.charAt(0);
+  var word = correctWord.charAt(0);
 
-  if ( slotNumber === cardNumber ) {
+  if ( letter == word ) {
     console.log("found the correct one");
     ui.draggable.addClass( 'correct' );
     ui.draggable.draggable( 'disable' );
@@ -70,7 +69,7 @@ function cardDrop( event, ui ) {
     });
     ui.draggable.draggable( 'option', 'revert', false );
     checkForWin();
-    // console.log(correctCards);
+    console.log(correctCards);
   } 
 }
 
