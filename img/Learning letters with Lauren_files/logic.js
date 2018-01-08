@@ -1,39 +1,39 @@
-var NUM_WORDS = 8;
 var correctCards = 0;
 var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ];
 var words = [ 'Apple', 'Boy', 'Cat', 'Dog', 'Elepant', 'Fort', 'Go', 'Hat', 'It', 'Jet', 'Key', 'Lenny', 'Monkey', 'Nancy', 'Ocean', 'Pet', 'Queen', 'Rat', 'Sam', 'Tea', 'Unicorn', 'Victor', 'Water', 'X-ray', 'Yosemite' , 'Zebra' ];
-var correctWord = getRandomWord();
-var randomWord = getRandomWord();
+var randomLetter= letters[Math.floor(Math.random()*words.length)];
+var correctWord = words[letters.indexOf(randomLetter)];
+var randomWord = words[Math.floor(Math.random()*words.length)];
 
 $(document).ready(function init() {
-  resetCards();
+  showLetters();
+  showWords()
+  // $("#wideBox").addClass("animated bounceInDown")
   $('#successMessage').hide();
   $('#successMessage').css( {
       left: '580px',
       top: '250px',
       width: 0,
       height: 0
-    });
+    } );
+  
 });
 
-$("#start-button").on("click", function(){
-    $("#wideBox").addClass("animated bounceOutUp");
-    console.log("clicked");
-});
-
+// $("#start-button").on("click", function() {
+//     $("#intro").addClass("animated bounceOutUp");
+// })
 
 function getRandomWord() {
     return words[Math.floor(Math.random()*words.length)];
 }
 
-function getFirstLetter(word) {
-    return word[0]
-
+function getRandomLetter() {
+    return letters[Math.floor(Math.random()*words.length)];
 }
 //made a div with the letter based on it's index in the array
 function showLetters() {
-    var firstLetter = getFirstLetter(correctWord);
-    $('<div>' + firstLetter + '</div>').appendTo( '#cardPile' ).draggable( {
+    // var randomLetter = getRandomLetter(randomLetter);
+    $('<div>' + randomLetter + '</div>').appendTo( '#cardPile' ).draggable( {
       stack: '#cardPile div',
       cursor: 'pointer',
       revert: true,
@@ -42,45 +42,38 @@ function showLetters() {
 }
 // creating the word cards
 function showWords() {  
-    // randomWord = getRandomWord();
-    correctWord = getRandomWord();
+    var randomWord = getRandomWord(randomWord);
+    // var correctWord = words[letters.indexOf(randomLetter)];
     //find index position of the corresponding word and display that word
 
-    //add the correct word to the array of words for this turn
-    var currentWords = [correctWord];
-
-    //pick X amount of random words
-    for(var i = 1; i < NUM_WORDS; i++){
-      currentWords.push(getRandomWord());
-    }
-
-    //Randomize order of cards
-    currentWords.sort(function(){
-      return 0.5 - Math.random();
-    });
-
-
-    for(var i = 0; i < currentWords.length; i++){
-      $('<div>' + currentWords[i] + '</div>').appendTo("#cardSlots").droppable({
+    $('<div>' + correctWord + '</div>').appendTo("#cardSlots").droppable({
           accept: '#cardPile div',
           hoverClass: 'hovered',
           drop: cardDrop
       });
-    }
 
-     showLetters();
+      $('<div>' + randomWord + '</div>').appendTo("#cardSlots").droppable({
+          accept: '#cardPile div',
+          hoverClass: 'hovered',
+          drop: function() {
+            console.log("Wrong try again!");
+          }
+      });
+
+     
+      // console.log("index of wrong word is ", words.indexOf(randomWord));
+      // console.log("index of correct word is ", words.indexOf(correctWord));
 }
  
 
 function cardDrop( event, ui ) {
-  var letter = getFirstLetter(correctWord);
-  var word = getFirstLetter($(this)[0].textContent);
+  var letter = randomLetter.charAt(0);
+  var word = correctWord.charAt(0);
 
   if ( letter == word ) {
     console.log("found the correct one");
     ui.draggable.draggable("disable");
-    
-    //once the card is confirmed position it directly on top of the slot, and prevent it being dragged
+//once the card is confirmed position it directly on top of the slot, and prevent it being dragged
     correctCards++;
     $(this).droppable('disable');
     ui.draggable.position({ 
@@ -92,13 +85,10 @@ function cardDrop( event, ui ) {
     checkForWin();
     console.log("Number of correct cards " + correctCards);
   } 
-  else {
-    console.log('wrong');
-  }
 }
 
 function checkForWin () {
-  if ( correctCards >= 5 ) {
+  if ( correctCards == 5 ) {
     $('#successMessage').show();
     $('#successMessage').animate( {
       left: '380px',
@@ -118,7 +108,8 @@ function checkForWin () {
 function resetCards () {
   $(".ui-droppable").remove();
   $(".ui-draggable").remove();
-  showWords();
+  $(showWords);
+  $(showLetters);
 }
 
 

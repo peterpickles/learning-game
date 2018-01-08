@@ -7,9 +7,6 @@ body {
   background-size: cover;
   margin-top: 15%;
 } 
-h1 {
-  text-align: center;
-}
 /* Main content area */
  
 #content {
@@ -25,15 +22,13 @@ h1 {
 /* Header/footer boxes */
  
 #wideBox {
+  /*display: none;*/
   text-align: center;
-  display: none;
   position: absolute;
-  margin:0px 200px;
+  margin: 50px 200px;
   display: inline-block;
-  height: 300px;
-  width: 1000px;
-  /*overflow: hidden;*/
-  padding: 10px;
+  overflow: hidden;
+  /*padding: 10px;*/
   z-index: 100;
   background: #ebedf2;
   border: 5px solid #333;

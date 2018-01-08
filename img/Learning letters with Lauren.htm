@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)file:///Users/rigaldo/project/code/unit1/learning-game/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Learning letters with Lauren</title>	
+	
+	<link rel="stylesheet" type="text/css" href="./Learning letters with Lauren_files/style.css">
+	<link rel="stylesheet" href="./Learning letters with Lauren_files/animate.min.css">
+	<link href="./Learning letters with Lauren_files/css" rel="stylesheet">
+<!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">	 -->
+</head>
+<body>
+<div id="wideBox">
+<h1>Learn alphabets with me!</h1>
+<h3>Instructions</h3>
+<p>With this game, drag and drop the alphabets letter into the slots to complete the world and learn the alphabets with Lauren!</p>
+<button id="start-button">Start Playing</button>
+</div>
+
+<h1 id="title">Match the alphabet to Card!</h1>
+
+<div id="content">
+	<div id="cardPile"><div class="ui-draggable" style="position: relative;">E</div></div>
+	<div id="cardSlots"><div class="ui-droppable">Elepant</div><div class="ui-droppable">Elepant</div></div>
+
+	<div id="successMessage" style="display: none; left: 580px; top: 250px; width: 0px; height: 0px;">
+    	<h2>Congratulations!</h2>
+    	<button onclick="init()">Play Again</button>
+  	</div>
+</div>
+
+<script type="text/javascript" src="./Learning letters with Lauren_files/jquery.min.js"></script>
+<script type="text/javascript" src="./Learning letters with Lauren_files/jquery-ui.min.js"></script>
+<script type="text/javascript" src="./Learning letters with Lauren_files/cards.js"></script>
+<script src="./Learning letters with Lauren_files/logic.js"></script>
+
+</body></html>
