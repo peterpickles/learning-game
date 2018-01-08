@@ -6,7 +6,7 @@ var randomLetter= letters[num];
 var correctWord = words[num];
 var randomWord = words[Math.floor(Math.random()*words.length)];
 
-$( document ).ready(function init() {
+$(document).ready(function init() {
   showLetters();
   showWords()
   $('#successMessage').hide();
@@ -21,9 +21,14 @@ $( document ).ready(function init() {
 function getRandomWord() {
     return words[Math.floor(Math.random()*words.length)];
 }
+
+function getRandomLetter() {
+    console.log("Get that letter!");
+}
 //made a div with the letter based on it's index in the array
 function showLetters() {
 // for ( var i=0; i<1; i++ ) {
+    var randomLetter 
     $('<div>' + randomLetter + '</div>').appendTo( '#cardPile' ).draggable( {
       stack: '#cardPile div',
       cursor: 'pointer',
@@ -35,7 +40,8 @@ function showLetters() {
 // creating the word cards
 function showWords() {  
     var randomWord = getRandomWord(randomWord);
-       $('<div>' + correctWord + '</div>').appendTo("#cardSlots").droppable({
+
+    $('<div>' + correctWord + '</div>').appendTo("#cardSlots").droppable({
           accept: '#cardPile div',
           hoverClass: 'hovered',
           drop: cardDrop
@@ -61,11 +67,11 @@ function cardDrop( event, ui ) {
 
   if ( letter == word ) {
     console.log("found the correct one");
-    ui.draggable.addClass( 'correct' );
-    ui.draggable.draggable( 'disable' );
+    ui.draggable.addClass("correct");
+    ui.draggable.draggable("disable");
 //once the card is confirmed position it directly on top of the slot, and prevent it being dragged
     correctCards++;
-    $(this).droppable( 'disable' );
+    $(this).droppable('disable');
     ui.draggable.position({ 
       of: $(this), 
       my: 'left top', 
@@ -96,10 +102,10 @@ function checkForWin () {
 //Will need a slight pause in the removal and some animations when the card comes into view
 //Get 
 function resetCards () {
-  $(".ui-droppable").remove();
-  $(".ui-draggable").remove();
-  $(showWords);
-  $(showLetters);
+  $(".ui-droppable").fadeOut(150);
+  $(".ui-draggable").fadeOut(150);
+  $(showWords).fadeIn(1000);
+  $(showLetters).fadeIn(1000);
 }
 
 
