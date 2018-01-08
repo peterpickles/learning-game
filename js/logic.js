@@ -7,8 +7,8 @@ var correctWord = words[num];
 var randomWord = words[Math.floor(Math.random()*words.length)];
 
 $( document ).ready(function init() {
-  $(showLetters);
-  $(showWords);
+  showLetters();
+  showWords()
   $('#successMessage').hide();
   $('#successMessage').css( {
       left: '580px',
@@ -18,6 +18,9 @@ $( document ).ready(function init() {
     } );
 });
 
+function getRandomWord() {
+    return words[Math.floor(Math.random()*words.length)];
+}
 //made a div with the letter based on it's index in the array
 function showLetters() {
 // for ( var i=0; i<1; i++ ) {
@@ -31,6 +34,7 @@ function showLetters() {
 }
 // creating the word cards
 function showWords() {  
+    var randomWord = getRandomWord(randomWord);
        $('<div>' + correctWord + '</div>').appendTo("#cardSlots").droppable({
           accept: '#cardPile div',
           hoverClass: 'hovered',
@@ -94,8 +98,8 @@ function checkForWin () {
 function resetCards () {
   $(".ui-droppable").remove();
   $(".ui-draggable").remove();
-  $(showLetters);
   $(showWords);
+  $(showLetters);
 }
 
 

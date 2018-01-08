@@ -26,6 +26,7 @@ h1, h2, h3, h4 {
 /* Header/footer boxes */
  
 .wideBox {
+  /*display: none;*/
   clear: both;
   text-align: center;
   margin: 70px;
@@ -35,6 +36,7 @@ h1, h2, h3, h4 {
 }
  
 .wideBox h1 {
+  /*display: none*/;
   font-weight: bold;
   margin: 20px;
   color: #666;
