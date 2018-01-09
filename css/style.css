@@ -7,7 +7,7 @@ body {
   text-align: center;
 } 
 h1 {
-  
+  text-align: center;
 }
 
 
@@ -27,6 +27,7 @@ h1 {
 
 #message {
   font-size: 30px;
+  text-align: center;
 }
  
 /* Header/footer boxes */
