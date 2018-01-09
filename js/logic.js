@@ -1,4 +1,4 @@
-var NUM_WORDS = 8;
+var NUM_WORDS = 5;
 var correctCards = 0;
 var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ];
 var words = [ 'Apple', 'Boy', 'Cat', 'Dog', 'Elepant', 'Fort', 'Go', 'Hat', 'It', 'Jet', 'Key', 'Lenny', 'Monkey', 'Nancy', 'Ocean', 'Pet', 'Queen', 'Rat', 'Sam', 'Tea', 'Unicorn', 'Victor', 'Water', 'X-ray', 'Yosemite' , 'Zebra' ];
@@ -8,12 +8,6 @@ var randomWord = getRandomWord();
 $(document).ready(function init() {
   resetCards();
   $('#successMessage').hide();
-  $('#successMessage').css( {
-      left: '580px',
-      top: '250px',
-      width: 0,
-      height: 0
-    });
 });
 
 $("#start-button").on("click", function(){
@@ -77,8 +71,10 @@ function cardDrop( event, ui ) {
   var word = getFirstLetter($(this)[0].textContent);
 
   if ( letter == word ) {
-    console.log("found the correct one");
+    // $("#message").remove();
+    $("#message").addClass("animated zoomIn").append( "<p>Yay!! that was the correct one!</p>" );
     ui.draggable.draggable("disable");
+
     
     //once the card is confirmed position it directly on top of the slot, and prevent it being dragged
     correctCards++;
@@ -93,35 +89,15 @@ function cardDrop( event, ui ) {
     console.log("Number of correct cards " + correctCards);
   } 
   else {
-    console.log('wrong');
+    // $("#message").remove();
+    $("#message p").append( "<p>Ohnoes!! Try again</p>" );;
   }
 }
 
-//play a sound when the right drop happens or the wrong drop happens
-// function dropRight(ev) { 
-//   ev.preventDefault(); 
-//   var data=ev.dataTransfer.getData("Text"); 
-//   ev.target.appendChild(document.getElementById(data)); 
-//   playSound("yay.wav"); 
-// }
-// function dropWrong(ev) { 
-//   ev.preventDefault(); 
-//   var data=ev.dataTransfer.getData("Text"); 
-//   ev.target.appendChild(document.getElementById(data)); 
-//   playSound("uh-oh.wav"); 
-// }
-
 function checkForWin () {
   if ( correctCards >= 5 ) {
-    $('#successMessage').show();
-    $('#successMessage').animate( {
-      left: '380px',
-      top: '200px',
-      width: '400px',
-      height: '250px',
-      opacity: 1
-      
-    } );
+    $('#successMessage').addClass("animated bounceInDown").show();
+
   }else {
 
     resetCards()

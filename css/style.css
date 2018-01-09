@@ -1,36 +1,44 @@
 body {
   font-family: 'Indie Flower', cursive;
   color: #333;
-  background: url("../img/background.png" );
+  /*background: url("../img/background.png" );*/
   background-size: contain;
   margin-top: 15%;
+  text-align: center;
 } 
 h1 {
-  text-align: center;
+  
 }
+
+
 /* Main content area */
  
 #content {
-  margin: 100px 70px;
+  margin: 100px 200px;
   height: 50%;
   position: relative;
-  text-align: center;
+  
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  background: red;
+  z-index: 1
+}
+
+#message {
+  font-size: 30px;
 }
  
 /* Header/footer boxes */
  
 #wideBox {
-  text-align: center;
   display: none;
   position: absolute;
   margin:0px 200px;
   display: block;
   height: 300px;
   width: 1000px;
-  /*overflow: hidden;*/
+  overflow: hidden;
   padding: 10px;
   z-index: 100;
   background: #ebedf2;
@@ -44,8 +52,7 @@ h1 {
   font-size: 2em;
 }
 
-#start-button{
-  text-align: center;
+button {
   height: 36px;
   width: 350px;
   margin-top: 30px;
@@ -128,18 +135,13 @@ h1 {
 /* "You did it!" message */
 #successMessage {
   position: absolute;
-  left: 580px;
-  top: 250px;
-  width: 0;
-  height: 0;
-  /*z-index: 100;
-  background: #dfd;
-  border: 2px solid #333;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-  -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-  box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-  padding: 20px;*/
+  margin:0px 200px;
+  display: block;
+  height: 300px;
+  width: 1000px;
+  overflow: hidden;
+  padding: 10px;
+  z-index: 100;
+  background: #ebedf2;
+  border: 5px solid #333;
 }
