@@ -71,12 +71,8 @@ function cardDrop( event, ui ) {
   var word = getFirstLetter($(this)[0].textContent);
 
   if ( letter == word ) {
-    // $("#message").remove();
-    $("#message").addClass("animated zoomIn").append( "<p>Yay!! that was the correct one!</p>" );
-    ui.draggable.draggable("disable");
-
-    
-    //once the card is confirmed position it directly on top of the slot, and prevent it being dragged
+    $("#message").html("").addClass("animated zoomIn").text( "Yay!! that was the correct one!" );
+    ui.draggable.draggable("disable");//once the card is confirmed position it directly on top of the slot, and prevent it being dragged
     correctCards++;
     $(this).droppable('disable');
     ui.draggable.position({ 
@@ -89,8 +85,7 @@ function cardDrop( event, ui ) {
     console.log("Number of correct cards " + correctCards);
   } 
   else {
-    // $("#message").remove();
-    $("#message p").append( "<p>Ohnoes!! Try again</p>" );;
+    $("#message").html("").addClass("animated zoomIn").text( "Ohnoes!! Try again" );
   }
 }
 

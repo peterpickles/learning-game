@@ -1,7 +1,7 @@
 body {
   font-family: 'Indie Flower', cursive;
   color: #333;
-  /*background: url("../img/background.png" );*/
+  background: url("../img/background.png" );
   background-size: contain;
   margin-top: 15%;
   text-align: center;
