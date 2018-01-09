@@ -97,6 +97,20 @@ function cardDrop( event, ui ) {
   }
 }
 
+//play a sound when the right drop happens or the wrong drop happens
+// function dropRight(ev) { 
+//   ev.preventDefault(); 
+//   var data=ev.dataTransfer.getData("Text"); 
+//   ev.target.appendChild(document.getElementById(data)); 
+//   playSound("yay.wav"); 
+// }
+// function dropWrong(ev) { 
+//   ev.preventDefault(); 
+//   var data=ev.dataTransfer.getData("Text"); 
+//   ev.target.appendChild(document.getElementById(data)); 
+//   playSound("uh-oh.wav"); 
+// }
+
 function checkForWin () {
   if ( correctCards >= 5 ) {
     $('#successMessage').show();
@@ -106,8 +120,10 @@ function checkForWin () {
       width: '400px',
       height: '250px',
       opacity: 1
+      
     } );
   }else {
+
     resetCards()
   }
 }
